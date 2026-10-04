@@ -83,5 +83,15 @@ Fix Applied: Configured Jenkins Node Monitoring (Manage Jenkins -> Nodes -> Conf
 
 📸 Deployment Proof
 Pipeline Status: SUCCESS (Verified in Jenkins Console Output)
+### 1. Jenkins Pipeline Success (Console Output)
+<img width="1919" height="1034" alt="Screenshot 2026-10-04 224432" src="https://github.com/user-attachments/assets/d80291c8-9d04-47db-af64-00372bd9f4f9" />
+<img width="1919" height="1028" alt="Screenshot 2026-10-04 224441" src="https://github.com/user-attachments/assets/122b516b-e713-4837-9332-6a8b5d748d79" />
+<img width="1907" height="1034" alt="Screenshot 2026-10-04 224450" src="https://github.com/user-attachments/assets/b957467d-ff32-4a0b-b045-a7cc62a76838" />
+![Jenkins Success]()
+
+### 2. Live Website Output
+<img width="1919" height="1029" alt="Screenshot 2026-10-04 224703" src="https://github.com/user-attachments/assets/04d0f207-0d94-4fba-b367-d41708df4653" />
+
+![Live Website]()
 
 Live Access: Accessible via the AWS EC2 Public IP (http://)
