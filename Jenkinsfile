@@ -23,10 +23,13 @@ pipeline {
     }
 }
         stage('Deploy App') {
-            steps {
-                sh 'docker rm -f my-app-container || true'
-                sh 'docker run -d -p 80:80 --name my-app-container /my-devops-app:latest'
-            }
+    steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+            // Pehle purana container remove karein
+            sh 'docker rm -f my-app-container'
+            
+            // Naya container run karein (Yaha sahi image naam use kiya hai)
+            sh 'docker run -d -p 80:80 --name my-app-container $DOCKER_USER/my-devops-app:latest'
         }
     }
 }
