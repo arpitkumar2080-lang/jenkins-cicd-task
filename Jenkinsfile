@@ -12,12 +12,19 @@ pipeline {
             }
         }
         stage('Push to Docker Hub') {
-            steps {
-                // Replace '' with your actual Docker Hub username
-                sh 'docker tag my-devops-app arpitku202/my-devops-app:latest'
-                sh 'docker push arpitku202/my-devops-app:latest'
-            }
+    steps {
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
+            // First, securely log in to Docker Hub
+            sh 'echo \(DOCKER_PASS | docker login -u\)DOCKER_USER --password-stdin'
+            
+            // Tag the image (using a variable here is best practice)
+            sh 'docker tag my-devops-app $DOCKER_USER/my-devops-app:latest'
+            
+            // Push the image
+            sh 'docker push $DOCKER_USER/my-devops-app:latest'
         }
+    }
+}
         stage('Deploy App') {
             steps {
                 sh 'docker rm -f my-app-container || true'
