@@ -5,7 +5,6 @@ AWS DevOps CI/CD Pipeline (Jenkins, Docker & Nginx)
 This repository contains a complete automated CI/CD pipeline built for deploying a web application on an AWS EC2 instance using Jenkins, Docker, and Nginx.
 
 Author: ARPIT KUMAR
-
 Target Role: AWS Cloud Support Engineer
 
 🚀 Project Overview
@@ -13,13 +12,9 @@ The goal of this project is to automate the software release process. Whenever c
 
 🛠️ Architecture & Tech Stack
 Cloud Provider: AWS EC2 (Ubuntu / Linux)
-
 CI/CD Orchestrator: Jenkins (Running on port 8080)
-
 Containerization: Docker & Dockerfile
-
 Web Server: Nginx (Alpine-based container)
-
 Version Control: GitHub
 
 📁 Project Structure
