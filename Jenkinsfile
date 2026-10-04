@@ -14,8 +14,8 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 // Replace '' with your actual Docker Hub username
-                sh 'docker tag my-devops-app /my-devops-app:latest'
-                sh 'docker push /my-devops-app:latest'
+                sh 'docker tag my-devops-app arpitku202/my-devops-app:latest'
+                sh 'docker push arpitku202/my-devops-app:latest'
             }
         }
         stage('Deploy App') {
