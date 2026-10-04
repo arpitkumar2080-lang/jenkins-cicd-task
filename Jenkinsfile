@@ -14,14 +14,9 @@ pipeline {
         stage('Push to Docker Hub') {
     steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASS', usernameVariable: 'DOCKER_USER')]) {
-            // First, securely log in to Docker Hub
-            sh 'echo \(DOCKER_PASS | docker login -u\)DOCKER_USER --password-stdin'
-            
-            // Tag the image 
-            sh 'docker tag my-devops-app $DOCKER_USER/my-devops-app:latest'
-            
-            // Push the image
-            sh 'docker push $DOCKER_USER/my-devops-app:latest'
+            sh "echo \({DOCKER_PASS} | docker login -u\){DOCKER_USER} --password-stdin"
+            sh "docker tag my-devops-app ${DOCKER_USER}/my-devops-app:latest"
+            sh "docker push ${DOCKER_USER}/my-devops-app:latest"
         }
     }
 }
