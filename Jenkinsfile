@@ -31,7 +31,7 @@ pipeline {
             // Naya container run karein (Yaha sahi image naam use kiya hai)
             sh 'docker run -d -p 80:80 --name my-app-container $DOCKER_USER/my-devops-app:latest'
         }
-   }
-}
+    }
+ }
  }
  }
